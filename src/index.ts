@@ -5,7 +5,6 @@ import * as init from './commands/init'
 import * as migrate from './commands/migrate'
 import * as seed from './commands/seed'
 import * as status from './commands/status'
-import { environment } from './core/middleware'
 import { getYArgs } from './core/yargs'
 
 const yargs = getYArgs()
@@ -16,7 +15,7 @@ yargs
   .version()
   .command('init', 'Initializes project', init)
   .command('status', 'List the status of all migrations', status)
-  .command('create', 'Create migration file', create)
+  .command('create:migration', 'Create migration file', create)
   .command('create:seed', 'Create seeder file', create)
   .command('migrate', 'Run pending migrations', migrate)
   .command('migrate:undo', 'Revert all migrations ran', migrate)
@@ -27,4 +26,4 @@ yargs
   .help()
   .strict()
   .recommendCommands()
-  .middleware([environment]).argv
+  .argv

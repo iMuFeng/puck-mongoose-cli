@@ -13,7 +13,7 @@ export function builder(yargs: Argv): Promise<Argv> {
 
 export function handler(argv: any): void {
   const configs = helper.getConfigs(argv)
-  helper.infoLogger(`Using environment "${configs.env}"`)
+  helper.infoLogger(`Using environment "${process.env.NODE_ENV}"`)
 
   if (helper.isEmpty(configs.config)) {
     helper.errorLogger(

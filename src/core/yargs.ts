@@ -20,14 +20,9 @@ export function getYArgs() {
 
 export function baseOptions(yargs: yargs.Argv): yargs.Argv {
   return yargs
-    .option('env', {
-      describe: 'The environment to run the command in',
-      default: 'local',
-      type: 'string'
-    })
     .option('typescript', {
       describe: 'Whether to use typescript format',
-      default: false,
+      default: true,
       type: 'boolean'
     })
     .option('config', {

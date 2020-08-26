@@ -20,7 +20,7 @@ export function migrator(
   action: ActionsEnum
 ): void {
   const configs = helper.getConfigs(argv)
-  helper.infoLogger(`Using environment "${configs.env}"`)
+  helper.infoLogger(`Using environment "${process.env.NODE_ENV}"`)
 
   // Enable transpile typescript file
   if (configs.typescript) {
